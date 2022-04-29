@@ -10,7 +10,7 @@ import { Fontisto } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
+import ChatScreen from '../screens/ChatScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, MainTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -73,7 +73,7 @@ function MainTabNavigator() {
       }}>
       <MainTab.Screen
         name="Camera"
-        component={TabOneScreen}
+        component={ChatScreen}
         options={{
           tabBarIcon: ({ color: string }) => <Fontisto name="camera" color={Colors[colorScheme].background} size={18} />,
           tabBarLabel: () => null
@@ -81,7 +81,7 @@ function MainTabNavigator() {
       />
       <MainTab.Screen
         name="Chats"
-        component={TabTwoScreen}
+        component={ChatScreen}
         options={{
           tabBarLabelStyle: {
             fontWeight: 'bold'
