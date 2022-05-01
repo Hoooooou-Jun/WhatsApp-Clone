@@ -11,6 +11,7 @@ import { Fontisto } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ChatScreen from '../screens/ChatScreen';
+import ChatRoomScreen from '../screens/ChatRoomScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, MainTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -19,7 +20,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      theme={colorScheme === 'dark' ? DarkTheme :  DefaultTheme}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -49,6 +50,13 @@ function RootNavigator() {
           </View>
         )
       }} />
+      <Stack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={({ route }) => ({
+          title: route.params.name
+        })}
+      />
     </Stack.Navigator>
   );
 }
