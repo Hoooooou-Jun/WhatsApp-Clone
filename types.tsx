@@ -45,11 +45,11 @@ export type User = {
 export type Message = {
   id: string;
   content: string;
-  createdAt: number;
+  createdAt: string;
 }
 
 export type ChatRoom = {
   id: string;
   users: [User];
-  lastMessage: string;
+  lastMessage: Message;
 }
