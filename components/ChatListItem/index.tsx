@@ -11,10 +11,9 @@ export type ChatListItemProps = {
 
 const ChatListItem = (props: ChatListItemProps) => {
   const { chatRoom } = props;
-
   const navigation = useNavigation();
 
-  const user = chatRoom.users[1];
+  const user: any = chatRoom.users[1]; // 나중에 타입 지정 필요
 
   const onClick = () => {
     navigation.navigate('ChatRoom', {

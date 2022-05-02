@@ -20,15 +20,9 @@ const linking: LinkingOptions<RootStackParamList> = {
               ChatScreen: 'Chats',
             },
           },
-          TabTwo: {
-            screens: {
-              TabTwoScreen: 'two',
-            },
-          },
         },
       },
-      Modal: 'modal',
-      NotFound: '*',
+      ChatRoom: 'ChatRoom',
     },
   },
 };
