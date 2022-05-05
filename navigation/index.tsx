@@ -1,11 +1,10 @@
-import { FontAwesome } from '@expo/vector-icons';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 import { ColorSchemeName, Pressable, View } from 'react-native';
-import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Octicons, MaterialCommunityIcons, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
@@ -54,7 +53,14 @@ function RootNavigator() {
         name="ChatRoom"
         component={ChatRoomScreen}
         options={({ route }) => ({
-          title: route.params.name
+          title: route.params.name,
+          headerRight: () => (
+            <View style={{flexDirection: 'row', width: 100, justifyContent: 'space-between'}}>
+              <MaterialIcons name="call" size={22} color={'white'} />
+              <FontAwesome5 name="video" size={22} color={'white'} />
+              <MaterialCommunityIcons name="dots-vertical" size={22} color={'white'} />
+            </View>
+          )
         })}
       />
     </Stack.Navigator>
